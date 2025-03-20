@@ -1,8 +1,7 @@
-# modules/utils/analysis_utils.py
-
 import os
 import pandas as pd
 from coverage_tool.utils.helpers import sums_calculate, contains_test, get_split_name, generate_aggregate_csv
+from coverage_tool.utils.utils import list_files_2_menu
 
 
 def _generate_column_summaries(df, output_path, param, smell_name=None, original=False):
@@ -67,3 +66,23 @@ def get_sums_columns(dataframe, output_file_path, param, flag=True):
         os.makedirs(output_file_path, exist_ok=True)
 
         _generate_column_summaries(dataframe, output_file_path, param, smell_name=smell_name)
+
+#
+# def process_original_project_sum(language, dataset_abs_path, parent_dir, values_test):
+#     original_project_file_path = list_files_2_menu(
+#         os.path.join(language, dataset_abs_path), word='Project'
+#     )
+#
+#     original_project_name = os.path.basename(original_project_file_path)\
+#         .replace("(Original_File)-", "").replace(".csv", "")
+#
+#     values_test['project'] = original_project_name
+#
+#     output_file_path = os.path.join(
+#         parent_dir,
+#         os.path.basename(language),
+#         'coverage/data_analysis/_total/originals/'
+#     )
+#     os.makedirs(output_file_path, exist_ok=True)
+#
+#     get_sums_columns(original_project_file_path, output_file_path, values_test['project'], flag=True)

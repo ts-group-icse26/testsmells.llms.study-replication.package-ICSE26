@@ -9,6 +9,7 @@ packages = [{include = "testsmells"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 bs4 = "^0.0.2"
+pandas = "^2.2.3"
 
 
 [build-system]

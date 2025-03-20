@@ -1,9 +1,10 @@
 # modules/processors/compare.py
 
 import os
-from utils.get_original_project_sum import get_original_project_sum
-from extractors.coverage_extractors import list_datasets_files
+from coverage_tool.utils.utils import get_original_project_sum
+from coverage_tool.modules.extractors.coverage_extractors import list_datasets_files
 from utils import compare_and_calculate_difference  # Se já estiver definida
+from original_processor import process_original_project_sum
 
 
 def compare_projects(language, dataset_abs_path, extraction_results_path, output_folder):
